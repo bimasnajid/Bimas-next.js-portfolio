@@ -17,6 +17,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 // Import Image
 import Image from "../public/images/bymni.jpg";
+import Sidebar from "@/components/Sidebar";
 
 interface FullPageOptions {
   anchors: string[];
@@ -365,6 +366,7 @@ const HomePage: React.FC = () => (
         </div>
       </div>
     </main>
+    <Sidebar/>
     <Navbar />
   </>
 );
