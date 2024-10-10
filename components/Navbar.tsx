@@ -125,89 +125,91 @@ const NavItems: React.FC<NavItemsProps> = ({ isNavOpen, setIsNavOpen }) => {
   };
 
   return (
-    <motion.div
-      className="fixed z-[45] w-full h-screen flex items-center justify-center backdrop-blur-sm transition-all ease duration-700 overflow-hidden"
-      animate={isNavOpen ? "open" : "closed"}
-      initial={false}
-    >
-      <div className="relative backdrop-blur-sm opacity-95 flex flex-col items-center space-x-8 min-h-[100vh] bg-gray-700 min-w-[100vw]">
-        <div className="flex flex-col items-center mx-0 my-auto space-y-8">
-          {/* title */}
-          <motion.h1
-            animate={{ opacity: 1 }}
-            initial={{ opacity: 0 }}
-            transition={{ delay: 0.5, duration: 1 }}
-            className="text-6xl font-bold text-white"
-          >
-            Menu
-          </motion.h1>
-          <a href="/#home">
-            <motion.div
-              onClick={handleItemClick}
-              className="text-2xl font-bold text-white"
-              variants={itemVariants}
-              animate={isNavOpen ? "open" : "closed"}
+    <>
+      <motion.div
+        className="fixed z-[45] w-full h-screen flex items-center justify-center backdrop-blur-sm transition-all ease duration-700 overflow-hidden"
+        animate={isNavOpen ? "open" : "closed"}
+        initial={false}
+      >
+        <div className="relative backdrop-blur-sm opacity-95 flex flex-col items-center space-x-8 min-h-[100vh] bg-gray-700 min-w-[100vw]">
+          <div className="flex flex-col items-center mx-0 my-auto space-y-8">
+            {/* title */}
+            <motion.h1
+              animate={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
+              transition={{ delay: 0.5, duration: 1 }}
+              className="text-6xl font-bold text-white"
             >
-              <motion.h2
-                className="text-white"
+              Menu
+            </motion.h1>
+            <a href="/#home">
+              <motion.div
+                onClick={handleItemClick}
+                className="text-2xl font-bold text-white"
                 variants={itemVariants}
                 animate={isNavOpen ? "open" : "closed"}
               >
-                Home
-              </motion.h2>
-            </motion.div>
-          </a>
-          <Link href="/about">
-            <motion.div
-              onClick={handleItemClick}
-              className="text-2xl font-bold text-white"
-              variants={itemVariants}
-              animate={isNavOpen ? "open" : "closed"}
-            >
-              <motion.h2
-                className="text-white"
+                <motion.h2
+                  className="text-white"
+                  variants={itemVariants}
+                  animate={isNavOpen ? "open" : "closed"}
+                >
+                  Home
+                </motion.h2>
+              </motion.div>
+            </a>
+            <Link href="/about">
+              <motion.div
+                onClick={handleItemClick}
+                className="text-2xl font-bold text-white"
                 variants={itemVariants}
                 animate={isNavOpen ? "open" : "closed"}
               >
-                About
-              </motion.h2>
-            </motion.div>
-          </Link>
-          <Link href="/projects">
-            <motion.div
-              onClick={handleItemClick}
-              className="text-2xl font-bold text-white"
-              variants={itemVariants}
-              animate={isNavOpen ? "open" : "closed"}
-            >
-              <motion.h2
-                className="text-white"
+                <motion.h2
+                  className="text-white"
+                  variants={itemVariants}
+                  animate={isNavOpen ? "open" : "closed"}
+                >
+                  About
+                </motion.h2>
+              </motion.div>
+            </Link>
+            <Link href="/projects">
+              <motion.div
+                onClick={handleItemClick}
+                className="text-2xl font-bold text-white"
                 variants={itemVariants}
                 animate={isNavOpen ? "open" : "closed"}
               >
-                Projects
-              </motion.h2>
-            </motion.div>
-          </Link>
-          <a href="/#contact">
-            <motion.div
-              onClick={handleItemClick}
-              className="text-2xl font-bold text-white"
-              variants={itemVariants}
-              animate={isNavOpen ? "open" : "closed"}
-            >
-              <motion.h2
-                className="text-white"
+                <motion.h2
+                  className="text-white"
+                  variants={itemVariants}
+                  animate={isNavOpen ? "open" : "closed"}
+                >
+                  Projects
+                </motion.h2>
+              </motion.div>
+            </Link>
+            <a href="/#contact">
+              <motion.div
+                onClick={handleItemClick}
+                className="text-2xl font-bold text-white"
                 variants={itemVariants}
                 animate={isNavOpen ? "open" : "closed"}
               >
-                Contact
-              </motion.h2>
-            </motion.div>
-          </a>
+                <motion.h2
+                  className="text-white"
+                  variants={itemVariants}
+                  animate={isNavOpen ? "open" : "closed"}
+                >
+                  Contact
+                </motion.h2>
+              </motion.div>
+            </a>
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </>
   );
 };
 

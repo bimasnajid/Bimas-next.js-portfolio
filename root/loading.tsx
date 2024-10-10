@@ -1,11 +1,11 @@
-import React from "react";
+// import React from "react";
 
-const Loading: React.FC = () => {
-  return (
-    <div className="fixed top-0 left-0 flex justify-center items-center h-screen w-screen bg-gray-300 z-[999]">
-      <h1 className="text-4xl text-gray-900">Loading...</h1>
-    </div>
-  );
-};
+// const Loading: React.FC = () => {
+//   return (
+//     <div className="fixed top-0 left-0 flex justify-center items-center h-screen w-screen bg-gray-300 z-[999]">
+//       <h1 className="text-4xl text-gray-900">Loading...</h1>
+//     </div>
+//   );
+// };
 
-export default Loading;
+// export default Loading;
