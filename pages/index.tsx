@@ -5,8 +5,6 @@ import Link from "next/link";
 import Button from "../components/Button";
 import Hr from "../components/Hr";
 import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar";
-
 
 // incons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,39 +15,28 @@ import { faDiscord } from "@fortawesome/free-brands-svg-icons";
 import { faD, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 // Import Image
-import Image from "../public/images/bymni.jpg";
+
 import Sidebar from "@/components/Sidebar";
-
-// interface FullPageOptions {
-//   anchors: string[];
-//   scrollingSpeed: number;
-//   licenseKey: string;
-//   menu: string;
-//   lockAnchors: boolean;
-// }
-
-// const fullpageOptions: FullPageOptions = {
-//   anchors: ["home", "about", "projects", "contact"],
-//   scrollingSpeed: 1000,
-//   licenseKey: "gplv3-license",
-//   menu: "#sidebar",
-//   lockAnchors: false,
-// };
+import Navbar from "@/components/Navbar";
 
 const HomePage: React.FC = () => (
+  // Nabar Start
+
+  // Navbar End
   <div className="flex flex-col z-50">
     {/* <Navbar /> */}
     <div className="flex">
-      <Sidebar/>
+      <Sidebar />
     </div>
 
     <div className="w-full">
       <ReactFullpage
         anchors={["home", "about", "projects", "contact"]}
-        navigation={true}
         scrollingSpeed={1000} /* Menyesuaikan kecepatan scroll */
         credits={{ enabled: false }}
         menu="#Sidebar"
+        autoScrolling={false}
+        fitToSection={false}
         render={({ state, fullpageApi }) => {
           return (
             <ReactFullpage.Wrapper>
@@ -413,3 +400,145 @@ const HomePage: React.FC = () => (
 );
 
 export default HomePage;
+
+// "use client";
+
+// import { useState } from "react";
+// import ReactFullpage from "@fullpage/react-fullpage";
+// import Link from "next/link";
+// import Button from "../components/Button";
+// import Hr from "../components/Hr";
+// import { motion } from "framer-motion";
+// import Sidebar from "@/components/Sidebar";
+// import Navbar from "@/components/Navbar"; // Assumes you have a separate Navbar component
+
+// const HomePage: React.FC = () => {
+//   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
+
+//   // Function to toggle navbar visibility
+//   const toggleNavbar = () => {
+//     setIsNavbarVisible(!isNavbarVisible);
+//   };
+
+//   return (
+//     <div className="relative flex flex-col z-50">
+//       {/* Button to toggle the navbar */}
+//       <button
+//         className="absolute top-4 left-4 z-50 p-2 bg-gray-700 text-white rounded-md"
+//         onClick={toggleNavbar}
+//       >
+//         {isNavbarVisible ? "Close Menu" : "Open Menu"}
+//       </button>
+
+//       {/* Conditionally render the Navbar */}
+//       {isNavbarVisible && (
+//         <div className="fixed top-0 left-0 w-64 h-full bg-gray-800 z-40">
+//           <Navbar />
+//         </div>
+//       )}
+
+//       <div className="flex">
+//         <Sidebar />
+//       </div>
+
+//       <div className="w-full">
+//         <ReactFullpage
+//           anchors={["home", "about", "projects", "contact"]}
+//           scrollingSpeed={1000} /* Menyesuaikan kecepatan scroll */
+//           credits={{ enabled: false }}
+//           menu="#Sidebar"
+//           autoScrolling={false}
+//           fitToSection={false}
+//           render={({ state, fullpageApi }) => {
+//             return (
+//               <ReactFullpage.Wrapper>
+//                 {/* Section 1: Home */}
+//                 <div className="section">
+//                   <div className="container grid grid-cols-1 gap-4 p-10 mx-auto overflow-hidden md:grid-cols-3 md:px-20">
+//                     <motion.div
+//                       className="flex flex-col items-center justify-center col-span-2 text-center md:items-start md:text-start"
+//                       initial={{ x: -100, opacity: 0 }}
+//                       whileInView={{ x: 0, opacity: 1 }}
+//                       transition={{
+//                         type: "spring",
+//                       }}
+//                     >
+//                       <div className="block col-span-1 mx-auto my-10 md:hidden">
+//                         <div className="rounded-full bg-slate-500 h-60 w-60 grayscale hover:grayscale-0">
+//                           <img
+//                             src="/images/mybim.jpg"
+//                             alt="Example Image"
+//                             style={{ width: "100%", height: "auto" }}
+//                           />
+//                         </div>
+//                       </div>
+//                       <motion.h3
+//                         className="uppercase text-xl mb-3 font-normal text tracking-[.5rem] text-gray-500"
+//                         initial={{ x: -100, opacity: 0 }}
+//                         whileInView={{ x: 0, opacity: 1 }}
+//                         transition={{
+//                           delay: 0.2,
+//                           type: "spring",
+//                         }}
+//                       >
+//                         Bimas Najid Ilmansyah
+//                       </motion.h3>
+//                       <motion.h1
+//                         className="my-2 text-5xl font-bold text-black md:text-6xl lg:text-7xl 2xl:text-8xl md:my-5"
+//                         initial={{ x: -100, opacity: 0 }}
+//                         whileInView={{ x: 0, opacity: 1 }}
+//                         transition={{
+//                           delay: 0.3,
+//                           type: "spring",
+//                         }}
+//                       >
+//                         Full Stack Developer
+//                       </motion.h1>
+//                       <motion.p
+//                         className="title text-md  2xl:text-xl mt-4 tracking-wider text-gray-500 leading-[1.7rem]"
+//                         initial={{ x: -100, opacity: 0 }}
+//                         whileInView={{ x: 0, opacity: 1 }}
+//                         transition={{
+//                           delay: 0.4,
+//                           type: "spring",
+//                         }}
+//                       >
+//                         A junior fullstack developer who currently focused on
+//                         Web Development. Other than that, I also interested in
+//                         UX/UI Design, Mobile and AI Development. I love to learn
+//                         new things and always open to new opportunities.
+//                       </motion.p>
+//                       <motion.div
+//                         className="flex flex-row items-center justify-center mt-10 space-x-4 buttons"
+//                         initial={{ x: -100, opacity: 0 }}
+//                         whileInView={{ x: 0, opacity: 1 }}
+//                         transition={{
+//                           delay: 0.5,
+//                           type: "spring",
+//                         }}
+//                       >
+//                         <Button variation="primary">
+//                           <Link href={"/docs/cv.pdf"}>Download CV</Link>
+//                         </Button>
+//                         <Button variation="secondary">
+//                           <a href="#contact">Contact Me</a>
+//                         </Button>
+//                       </motion.div>
+//                     </motion.div>
+//                   </div>
+//                 </div>
+
+//                 {/* Additional Sections */}
+//                 <div className="section"> {/* About Section */} </div>
+//                 <div className="section"> {/* Projects Section */} </div>
+//                 <div className="section"> {/* Contact Section */} </div>
+//               </ReactFullpage.Wrapper>
+//             );
+//           }}
+//         />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default HomePage;
